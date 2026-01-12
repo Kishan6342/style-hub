@@ -2,104 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Pastel Rainbow Design System */
+/* Sadasahi - Premium Linen Brand Design System */
+/* Earthy, minimalistic, classic aesthetic */
 
 @layer base {
   :root {
-    --background: 300 20% 99%;
-    --foreground: 280 30% 15%;
+    --background: 40 30% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 280 30% 15%;
+    --card: 40 20% 97%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 280 30% 15%;
+    --popover: 40 20% 97%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 330 70% 75%;
-    --primary-foreground: 280 30% 15%;
+    --primary: 30 15% 25%;
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 200 70% 85%;
-    --secondary-foreground: 280 30% 15%;
+    --secondary: 45 25% 92%;
+    --secondary-foreground: 30 10% 15%;
 
-    --muted: 270 30% 95%;
-    --muted-foreground: 280 20% 45%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 30 10% 45%;
 
-    --accent: 160 60% 80%;
-    --accent-foreground: 280 30% 15%;
+    --accent: 140 15% 75%;
+    --accent-foreground: 30 10% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 30% 98%;
 
-    --border: 270 30% 90%;
-    --input: 270 30% 90%;
-    --ring: 330 70% 75%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 30 15% 25%;
 
-    --radius: 1rem;
+    --radius: 0.25rem;
 
-    /* Pastel Rainbow Colors */
-    --pastel-pink: 330 70% 85%;
-    --pastel-lavender: 270 60% 85%;
-    --pastel-mint: 160 50% 85%;
-    --pastel-blue: 200 70% 85%;
-    --pastel-yellow: 50 80% 88%;
-    --pastel-peach: 20 80% 88%;
-    --pastel-coral: 10 70% 85%;
+    /* Sadasahi Brand Colors */
+    --linen-cream: 45 40% 95%;
+    --linen-beige: 35 30% 88%;
+    --linen-sand: 35 25% 78%;
+    --linen-earth: 30 20% 45%;
+    --linen-olive: 80 15% 55%;
+    --linen-sage: 140 15% 70%;
+    --linen-charcoal: 30 10% 20%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 20% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 30 15% 25%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 40 15% 94%;
+    --sidebar-accent-foreground: 30 10% 25%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 30 15% 25%;
   }
 
   .dark {
-    --background: 280 30% 8%;
-    --foreground: 300 20% 95%;
+    --background: 30 10% 8%;
+    --foreground: 40 20% 92%;
 
-    --card: 280 30% 10%;
-    --card-foreground: 300 20% 95%;
+    --card: 30 10% 10%;
+    --card-foreground: 40 20% 92%;
 
-    --popover: 280 30% 10%;
-    --popover-foreground: 300 20% 95%;
+    --popover: 30 10% 10%;
+    --popover-foreground: 40 20% 92%;
 
-    --primary: 330 70% 75%;
-    --primary-foreground: 280 30% 10%;
+    --primary: 40 25% 85%;
+    --primary-foreground: 30 10% 10%;
 
-    --secondary: 200 50% 30%;
-    --secondary-foreground: 300 20% 95%;
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 92%;
 
-    --muted: 280 20% 20%;
-    --muted-foreground: 270 20% 65%;
+    --muted: 30 10% 18%;
+    --muted-foreground: 40 15% 60%;
 
-    --accent: 160 40% 35%;
-    --accent-foreground: 300 20% 95%;
+    --accent: 140 15% 35%;
+    --accent-foreground: 40 20% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 40 30% 98%;
 
-    --border: 280 20% 20%;
-    --input: 280 20% 20%;
-    --ring: 330 70% 75%;
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 40 25% 85%;
 
-    --pastel-pink: 330 50% 45%;
-    --pastel-lavender: 270 40% 45%;
-    --pastel-mint: 160 35% 40%;
-    --pastel-blue: 200 50% 45%;
-    --pastel-yellow: 50 60% 50%;
-    --pastel-peach: 20 60% 50%;
-    --pastel-coral: 10 50% 45%;
+    --linen-cream: 45 20% 20%;
+    --linen-beige: 35 15% 25%;
+    --linen-sand: 35 12% 35%;
+    --linen-earth: 30 15% 60%;
+    --linen-olive: 80 12% 40%;
+    --linen-sage: 140 12% 45%;
+    --linen-charcoal: 30 10% 80%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 30 10% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 40 25% 85%;
+    --sidebar-primary-foreground: 30 10% 10%;
+    --sidebar-accent: 30 10% 18%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 10% 20%;
+    --sidebar-ring: 40 25% 85%;
   }
 }
 
@@ -109,58 +110,101 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
   }
 }
 
-/* Animated gradient background */
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
+/* Smooth transitions */
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
   }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-}
 
-@keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
   }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
-.animate-gradient {
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
