@@ -7,6 +7,9 @@ import { CartProvider } from "@/contexts/CartContext";
 import Layout from "@/components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
+import CollectionPage from "./pages/CollectionPage";
+import ProductPage from "./pages/ProductPage";
+
 
 const queryClient = new QueryClient();
 
@@ -20,8 +23,11 @@ const App = () => (
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/collections/:slug" element={<CollectionPage />} />
+                <Route path="/product/:id" element={<ProductPage />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
+
           </Layout>
         </BrowserRouter>
       </TooltipProvider>

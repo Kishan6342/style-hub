@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingBag, Search, User, ChevronDown } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { cn } from '@/lib/utils';
+// import "/Users/kishan7448/style-hub/src/App.css"; 
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -12,16 +13,25 @@ const navigation = [
     href: '/shop',
     children: [
       { name: 'All Products', href: '/shop' },
-      { name: 'Shirts', href: '/shop?category=shirts' },
+      { name: 'Kids Wear', href: '/shop?category=shirts' },
       { name: 'Tops', href: '/shop?category=tops' },
-      { name: 'Dresses', href: '/shop?category=dresses' },
-      { name: 'Bottoms', href: '/shop?category=bottoms' },
-      { name: 'Outerwear', href: '/shop?category=outerwear' },
+      { name: 'BOUQUET', href: '/shop?category=dresses' },
+      { name: 'Hair Accessories', href: '/shop?category=bottoms' },
+      { name: 'Coaster', href: '/shop?category=outerwear' },
+      { name: 'Cuddle Corner', href: '/shop?category=cuddle Corner' },
+      { name: 'Mens Wear', href: '/shop?category=Mens' },
+      { name: 'Key Chains', href: '/shop?category=Mens' },
+      { name: 'Chrochet Scarf', href: '/shop?category=Mens' }
+
+
     ],
   },
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Contact', href: '#contact' }
+
+
+,
 ];
 
 const Header = () => {
@@ -53,14 +63,20 @@ const Header = () => {
           : 'bg-transparent'
       )}
     >
-      <nav className="container mx-auto px-4 lg:px-8">
+      <nav className="w-full px-6 lg:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <h1 className="font-display text-2xl lg:text-3xl font-semibold tracking-wide text-foreground">
-              Sadasahi
-            </h1>
-          </Link>
+          <Link to="/" className="flex items-center">
+  <img
+    src="/Collections/logo.jpeg"
+    alt="Sada Simpal Logo"
+    className={cn(
+      'h-14 lg:h-20 w-auto transition-all duration-300',
+      isScrolled ? 'opacity-100' : 'opacity-95'
+    )}
+  />
+</Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -71,20 +87,28 @@ const Header = () => {
                 onMouseEnter={() => item.children && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link
-                  to={item.href}
-                  className={cn(
-                    'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
-                    location.pathname === item.href
-                      ? 'text-foreground'
-                      : 'text-muted-foreground'
-                  )}
-                >
-                  {item.name}
-                  {item.children && (
-                    <ChevronDown className="h-4 w-4 transition-transform" />
-                  )}
-                </Link>
+                {item.href === '#contact' ? (
+          <a
+            href="#contact"
+            className="flex items-center gap-1 text-sm font-medium textß-muted-foreground hover:text-primary transition-colors"
+          >
+            {item.name}
+          </a>
+        ) : (
+          <Link
+            to={item.href}
+            className={cn(
+              'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
+              location.pathname === item.href
+                ? 'text-foreground'
+                : 'text-muted-foreground'
+            )}
+          >
+            {item.name}
+          </Link>
+        )}
+
+
 
                 {/* Dropdown */}
                 <AnimatePresence>
@@ -162,12 +186,24 @@ const Header = () => {
               <div className="py-4 space-y-1">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      to={item.href}
-                      className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
-                    >
-                      {item.name}
-                    </Link>
+                    {item.href === '#contact' ? (
+  <a
+    href="#contact"
+    className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
+    onClick={() => setIsMobileMenuOpen(false)}
+  >
+    {item.name}
+  </a>
+) : (
+  <Link
+    to={item.href}
+    className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
+  >
+    {item.name}
+  </Link>
+)}
+
+
                     {item.children && (
                       <div className="pl-8 space-y-1">
                         {item.children.map((child) => (
