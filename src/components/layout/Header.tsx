@@ -68,7 +68,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
   <img
-    src="/Collections/logo.jpeg"
+    src="/style-hub/Collections/logo.jpeg"
     alt="Sada Simpal Logo"
     className={cn(
       'h-14 lg:h-20 w-auto transition-all duration-300',

@@ -10,7 +10,6 @@ import NotFound from "./pages/NotFound";
 import CollectionPage from "./pages/CollectionPage";
 import ProductPage from "./pages/ProductPage";
 
-
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -19,17 +18,14 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/collections/:slug" element={<CollectionPage />} />
-                <Route path="/product/:id" element={<ProductPage />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+        <Routes>
+  <Route path="/" element={<HomePage />} />
+  <Route path="/collections/:slug" element={<CollectionPage />} />
+  <Route path="/product/:id" element={<ProductPage />} />
+  <Route path="*" element={<NotFound />} />
+</Routes>
 
-          </Layout>
-        </BrowserRouter>
+
       </TooltipProvider>
     </CartProvider>
   </QueryClientProvider>

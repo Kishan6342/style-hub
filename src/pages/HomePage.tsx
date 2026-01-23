@@ -65,10 +65,10 @@ const [reviews, setReviews] = useState([
 ]);
 
   const instagramReviews = [
-  "/instagram/review1.jpg",
-  "/instagram/review2.jpg",
-  "/instagram/review3.jpg",
-  "/instagram/review4.jpg",
+  "/style-hub/instagram/review1.jpg",
+  "/style-hub/instagram/review2.jpg",
+  "/style-hub/instagram/review3.jpg",
+  "/style-hub/instagram/review4.jpg",
 ];
 
 
@@ -81,7 +81,7 @@ const [reviews, setReviews] = useState([
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('/image1.png')",
+              "url('/style-hub/image1.png')",
           }}
         >
           <div className="absolute inset-0 bg-foreground/30" />
@@ -142,7 +142,7 @@ const [reviews, setReviews] = useState([
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Link to={`/collections/${collection.slug}`} className="group block">
+                <Link to={`/style-hub/collections/${collection.slug}`} className="group block">
 
                   <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
                     <img
