@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingBag, Search, User, ChevronDown } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { cn } from '@/lib/utils';
+import logo from "@/assets/logo.jpeg";
+
 // import "/Users/kishan7448/style-hub/src/App.css"; 
 
 const navigation = [
@@ -68,14 +70,14 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
   <img
-    src="Collections/logo.jpeg"
+  src={logo}
+  alt="Sada Simpal Logo"
+  className={cn(
+    "h-14 lg:h-20 w-auto transition-all duration-300",
+    isScrolled ? "opacity-100" : "opacity-95"
+  )}
+/>
 
-    alt="Sada Simpal Logo"
-    className={cn(
-      'h-14 lg:h-20 w-auto transition-all duration-300',
-      isScrolled ? 'opacity-100' : 'opacity-95'
-    )}
-  />
 </Link>
 
 
