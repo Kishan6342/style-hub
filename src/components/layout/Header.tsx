@@ -68,7 +68,8 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
   <img
-    src="/style-hub/Collections/logo.jpeg"
+    src="Collections/logo.jpeg"
+
     alt="Sada Simpal Logo"
     className={cn(
       'h-14 lg:h-20 w-auto transition-all duration-300',
@@ -91,7 +92,7 @@ const Header = () => {
                 onMouseEnter={() => item.children && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.href === '#contact' ? (
+                {/* {item.href === '#contact' ? (
           <a
             href="#contact"
             className="flex items-center gap-1 text-sm font-medium text-black hover:text-primary transition-colors"
@@ -115,6 +116,23 @@ const Header = () => {
 
 
         )}
+ */}
+
+ {item.href.startsWith("#") ? (
+  <a
+    href={item.href}
+    className="relative text-sm font-medium tracking-wide text-foreground"
+  >
+    {item.name}
+  </a>
+) : (
+  <Link
+    to={item.href}
+    className="relative text-sm font-medium tracking-wide text-foreground"
+  >
+    {item.name}
+  </Link>
+)}
 
 
 
