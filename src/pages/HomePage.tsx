@@ -116,21 +116,28 @@ const [reviews, setReviews] = useState([
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-           <Button
+          <Button
   size="lg"
   variant="outline"
   className="border-[#2E2E2E] text-[#2E2E2E] bg-white/70 hover:bg-[#2E2E2E] hover:text-white transition-colors"
-  asChild
+  onClick={() => {
+    const el = document.getElementById("collections");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }}
 >
-  <Link to="/shop">Explore Collection</Link>
+  Explore Collection
 </Button>
+
 
           </motion.div>
         </div>
       </section>
 
       {/* Collections */}
-      <section className="py-20 px-4 lg:px-8">
+      <section id="collections" className="py-20 px-4 lg:px-8">
+
         <div className="container mx-auto">
           <h2 className="font-display text-3xl md:text-4xl text-center mb-12">Our Collections</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -142,7 +149,7 @@ const [reviews, setReviews] = useState([
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Link to={`/style-hub/collections/${collection.slug}`} className="group block">
+                <Link to={`/collections/${collection.slug}`} className="group block">
 
                   <div className="aspect-[3/4] overflow-hidden rounded-sm mb-4">
                     <img
@@ -165,9 +172,17 @@ const [reviews, setReviews] = useState([
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-12">
             <h2 className="font-display text-3xl md:text-4xl">Bestsellers</h2>
-            <Link to="/shop" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+            {/* <Link to="/shop" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
               View All <ArrowRight className="h-4 w-4" />
-            </Link>
+            </Link> */}
+
+            <a
+                      href="#collections"
+                    className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                        >
+                    View All <ArrowRight className="h-4 w-4" />
+                    </a>
+
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (

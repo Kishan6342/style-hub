@@ -15,7 +15,8 @@ const navigation = [
       { name: 'All Products', href: '/shop' },
       { name: 'Kids Wear', href: '/shop?category=shirts' },
       { name: 'Tops', href: '/shop?category=tops' },
-      { name: 'BOUQUET', href: '/shop?category=dresses' },
+      { name: 'Bouquet', href: '/collections/bouquet' }
+,
       { name: 'Hair Accessories', href: '/shop?category=bottoms' },
       { name: 'Coaster', href: '/shop?category=outerwear' },
       { name: 'Cuddle Corner', href: '/shop?category=cuddle Corner' },
@@ -55,16 +56,15 @@ const Header = () => {
   }, [location]);
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
-      )}
-    >
+   <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+
+
+
+
+
       <nav className="w-full px-6 lg:px-12">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
+
           {/* Logo */}
           <Link to="/" className="flex items-center">
   <img
@@ -79,7 +79,11 @@ const Header = () => {
 
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="flex items-center space-x-6">
+
+
+
+
             {navigation.map((item) => (
               <div
                 key={item.name}
@@ -90,22 +94,26 @@ const Header = () => {
                 {item.href === '#contact' ? (
           <a
             href="#contact"
-            className="flex items-center gap-1 text-sm font-medium textß-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-1 text-sm font-medium text-black hover:text-primary transition-colors"
           >
             {item.name}
           </a>
         ) : (
-          <Link
-            to={item.href}
-            className={cn(
-              'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
-              location.pathname === item.href
-                ? 'text-foreground'
-                : 'text-muted-foreground'
-            )}
-          >
-            {item.name}
-          </Link>
+       
+         <Link
+  to={item.href}
+  className={cn(
+    "relative text-sm font-medium tracking-wide text-foreground transition-all duration-300",
+    "after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full",
+    location.pathname === item.href
+      ? "after:w-full text-primary"
+      : "hover:text-primary"
+  )}
+>
+  {item.name}
+</Link>
+
+
         )}
 
 
@@ -118,13 +126,13 @@ const Header = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-sm shadow-lg py-2"
+                      className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg py-2"
                     >
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           to={child.href}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                            className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors"
                         >
                           {child.name}
                         </Link>
@@ -138,18 +146,18 @@ const Header = () => {
 
           {/* Right Icons */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-foreground hover:text-primary transition-colors">
+            <button className="p-2 text-black hover:text-primary transition-colors">
               <Search className="h-5 w-5" />
             </button>
             <Link
               to="/account"
-              className="p-2 text-foreground hover:text-primary transition-colors hidden sm:block"
+              className="p-2 text-black hover:text-primary transition-colors hidden sm:block"
             >
               <User className="h-5 w-5" />
             </Link>
             <button
               onClick={toggleCart}
-              className="p-2 text-foreground hover:text-primary transition-colors relative"
+              className="p-2 text-black hover:text-primary transition-colors relative"
             >
               <ShoppingBag className="h-5 w-5" />
               {totalItems > 0 && (
@@ -162,7 +170,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-foreground lg:hidden"
+              className="p-2 text-black lg:hidden"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -181,7 +189,7 @@ const Header = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden bg-background border-t border-border"
+              className="lg:hidden overflow-hidden bg-white border-t border-gray-200"
             >
               <div className="py-4 space-y-1">
                 {navigation.map((item) => (
@@ -189,7 +197,7 @@ const Header = () => {
                     {item.href === '#contact' ? (
   <a
     href="#contact"
-    className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
+    className="block px-4 py-3 text-base font-medium text-black hover:bg-muted transition-colors"
     onClick={() => setIsMobileMenuOpen(false)}
   >
     {item.name}
@@ -197,7 +205,7 @@ const Header = () => {
 ) : (
   <Link
     to={item.href}
-    className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
+    className="block px-4 py-3 text-base font-medium text-black hover:bg-muted transition-colors"
   >
     {item.name}
   </Link>
@@ -210,7 +218,7 @@ const Header = () => {
                           <Link
                             key={child.name}
                             to={child.href}
-                            className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                            className="block px-4 py-2 text-sm text-black hover:text-black transition-colors"
                           >
                             {child.name}
                           </Link>
@@ -221,7 +229,7 @@ const Header = () => {
                 ))}
                 <Link
                   to="/account"
-                  className="block px-4 py-3 text-base font-medium text-foreground hover:bg-muted transition-colors"
+                  className="block px-4 py-3 text-base font-medium text-black hover:bg-muted transition-colors"
                 >
                   Account
                 </Link>

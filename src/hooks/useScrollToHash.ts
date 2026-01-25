@@ -5,13 +5,17 @@ export const useScrollToHash = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
-      const el = document.getElementById(location.hash.substring(1));
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
+    // Handle HashRouter anchor scroll: #/#[id]
+    const hash = location.hash?.split("#")[2];
+
+    if (!hash) return;
+
+    const el = document.getElementById(hash);
+    if (!el) return;
+
+    // wait for layout + images
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
   }, [location]);
 };
