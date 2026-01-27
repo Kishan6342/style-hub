@@ -110,6 +110,10 @@ import HomePage from "./pages/HomePage";
 import CollectionPage from "./pages/CollectionPage";
 import ProductPage from "./pages/ProductPage";
 import NotFound from "./pages/NotFound";
+import StaticPage from "./pages/StaticPage";
+import CustomizeOrder from "./pages/CustomizeOrder";
+
+
 
 const queryClient = new QueryClient();
 
@@ -123,8 +127,13 @@ const App = () => (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/page/:slug" element={<StaticPage />} />
+            <Route path="/customize-order" element={<CustomizeOrder />} />
+
+
               <Route path="/collections/:slug" element={<CollectionPage />} />
             <Route path="/product/:id" element={<ProductPage />} />
+            
           <Route path="*" element={<NotFound />} />
         </Route>
 </Routes>

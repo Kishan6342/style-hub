@@ -45,47 +45,51 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-display text-lg mb-6 text-[#FAF7F2]">Quick Links</h3>
-            <ul className="space-y-3">
-              {['Shop All', 'New Arrivals', 'Bestsellers', 'About Us', 'Blog'].map(
-                (link) => (
-                  <li key={link}>
-                    <Link
-                      to={`/${link.toLowerCase().replace(' ', '-')}`}
-                      className="text-background/70 hover:text-background text-sm transition-colors"
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
+<div>
+  <h3 className="font-display text-lg mb-6 text-[#FAF7F2]">Quick Links</h3>
+  <ul className="space-y-3">
+    {['Shop All', 'New Arrivals', 'Bestsellers', 'About Us', 'Blog'].map(
+      (link) => (
+        <li key={link}>
+          <Link
+            to={`/page/${link.toLowerCase().replace(/\s+/g, '-')}`}
+            className="text-background/70 hover:text-background text-sm transition-colors"
+          >
+            {link}
+          </Link>
+        </li>
+      )
+    )}
+  </ul>
+</div>
+
 
           {/* Customer Care */}
-          <div>
-            <h3 className="font-display text-lg mb-6 text-[#FAF7F2]">
-Customer Care</h3>
-            <ul className="space-y-3">
-              {[
-                'Shipping & Returns',
-                'Size Guide',
-                'Care Instructions',
-                'FAQs',
-                'Contact Us',
-              ].map((link) => (
-                <li key={link}>
-                  <Link
-                    to={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-background/70 hover:text-background text-sm transition-colors"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Customer Care */}
+<div>
+  <h3 className="font-display text-lg mb-6 text-[#FAF7F2]">
+    Customer Care
+  </h3>
+  <ul className="space-y-3">
+    {[
+      'Shipping & Returns',
+      'Size Guide',
+      'Care Instructions',
+      'FAQs',
+      'Contact Us',
+    ].map((link) => (
+      <li key={link}>
+        <Link
+          to={`/page/${link.toLowerCase().replace(/\s+/g, '-')}`}
+          className="text-background/70 hover:text-background text-sm transition-colors"
+        >
+          {link}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
 <div id="contact" className="scroll-mt-32">
 
   <h3 className="font-display text-lg font-semibold mb-4">
@@ -131,19 +135,20 @@ Customer Care</h3>
             © {new Date().getFullYear()} Sadasimpalbysakshi. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link
-              to="/privacy-policy"
-              className="text-background/60 hover:text-background text-sm transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="text-background/60 hover:text-background text-sm transition-colors"
-            >
-              Terms of Service
-            </Link>
-          </div>
+  <Link
+    to="/page/privacy-policy"
+    className="text-background/60 hover:text-background text-sm transition-colors"
+  >
+    Privacy Policy
+  </Link>
+  <Link
+    to="/page/terms-of-service"
+    className="text-background/60 hover:text-background text-sm transition-colors"
+  >
+    Terms of Service
+  </Link>
+</div>
+
         </div>
       </div>
     </footer>

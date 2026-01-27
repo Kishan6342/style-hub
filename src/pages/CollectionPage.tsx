@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { products } from "@/data/products";
 import { Link } from "react-router-dom";
 
+
 const CollectionPage = () => {
   const { slug } = useParams();
 
@@ -16,8 +17,9 @@ const CollectionPage = () => {
   return (
     <div className="py-20 px-6 lg:px-12">
       <h1 className="font-display text-4xl mb-6 capitalize">
-        {slug}
-      </h1>
+  {slug?.replace("-", " ")}
+</h1>
+
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {collectionProducts.map((product) => (

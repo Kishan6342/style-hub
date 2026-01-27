@@ -16,6 +16,9 @@ export interface Product {
   inStock: boolean;
   isNew?: boolean;
   isBestseller?: boolean;
+
+  isNewArrival?: boolean;
+  createdAt?: string;
 }
 
 export interface Collection {
@@ -62,45 +65,45 @@ export const collections: Collection[] = [
   },
   {
     id: '4',
-    name: 'Crochet Coaster',
+    name: 'Home Decor',
     description: 'Handmade crochet coasters',
-    image: '/style-hub/Collections/coaster.jpeg',
-    slug: 'coasters',
+    image: '/style-hub/Collections/HomeDecor.png',
+    slug: 'Home-Decor',
   },
   {
     id: '5',
     name: 'Kids Wear',
     description: 'Cute crochet wear for kids',
-    image: '/style-hub/Collections/kids.jpeg',
+    image: '/style-hub/Collections/kids.png',
     slug: 'kids-wear',
   },
   {
     id: '6',
-    name: 'Crochet Tops',
+    name: 'Womens Wear',
     description: 'Stylish crochet tops',
-    image: '/style-hub/Collections/tops.jpeg',
-    slug: 'crochet-tops',
+    image: '/style-hub/Collections/womens.png',
+    slug: 'womens-wear',
   },
   {
     id: '7',
     name: 'Mens Wear',
     description: 'Crochet accessories for men',
-    image: 'public/Collections/mens.jpeg',
+    image: 'public/Collections/mens.png',
     slug: 'mens-wear',
   },
   {
     id: '8',
     name: 'Key Chains',
     description: 'Cute crochet keychains',
-    image: 'public/Collections/keychain.jpeg',
+    image: 'public/Collections/keychains.png',
     slug: 'key-chains',
   },
   {
     id: '9',
-    name: 'Curtain Ties',
+    name: 'Chrochet Scarf',
     description: 'Crochet curtain tie-backs',
-    image: 'public/Collections/curtain.jpeg',
-    slug: 'curtain-ties',
+    image: 'public/Collections/Scarf.png',
+    slug: 'scarf',
   },
 ];
 
@@ -126,6 +129,9 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade', 'Everlasting'],
   inStock: true,
+  isBestseller: true,
+  isNewArrival: false,
+  createdAt: "2026-01-27",
 },
 {
   id: 'b2',
@@ -142,6 +148,9 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isBestseller: false,
+  isNewArrival: true,
+  createdAt: "2026-01-27",
 },
 {
   id: 'b3',
@@ -158,6 +167,8 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  createdAt: "2025-10-10",
 },
 {
   id: 'b4',
@@ -174,6 +185,8 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  createdAt: "2025-10-10",
 },
 {
   id: 'b5',
@@ -190,6 +203,8 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  createdAt: "2025-10-10",
 },
 {
   id: 'b6',
@@ -206,6 +221,8 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  createdAt: "2025-10-10",
 },
 {
   id: 'b7',
@@ -222,6 +239,8 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  createdAt: "2025-10-10",
 },
 
 {
@@ -239,6 +258,8 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  createdAt: "2025-10-10",
 },
 {
   id: 'b9',
@@ -255,6 +276,9 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  isBestseller: true,
+  createdAt: "2025-10-10",
 },
 
 {
@@ -272,6 +296,9 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isNewArrival: true,
+  isBestseller: true,
+  createdAt: "2025-10-10",
 },
 {
   id: 'b11',
@@ -288,6 +315,7 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isBestseller: true,
 },
 {
   id: 'b12',
@@ -304,6 +332,7 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isBestseller: true,
 },
 {
   id: 'b13',
@@ -320,6 +349,7 @@ export const products: Product[] = [
   care: ['Keep dry'],
   features: ['Handmade'],
   inStock: true,
+  isBestseller: true,
 },
 
 

@@ -8,34 +8,72 @@ import logo from "@/assets/logo.jpeg";
 
 // import "/Users/kishan7448/style-hub/src/App.css"; 
 
-const navigation = [
-  { name: 'Home', href: '/' },
+// const navigation = [
+//   { name: 'Home', href: '/' },
+//   {
+//     name: 'Shop',
+//     href: '/shop',
+//     children: [
+//       { name: 'All Products', href: '/shop' },
+//       { name: 'Kids Wear', href: '/shop?category=shirts' },
+//       { name: 'Tops', href: '/shop?category=tops' },
+//       { name: 'Bouquet', href: '/collections/bouquet' }
+// ,
+//       { name: 'Hair Accessories', href: '/shop?category=bottoms' },
+//       { name: 'Coaster', href: '/shop?category=outerwear' },
+//       { name: 'Cuddle Corner', href: '/shop?category=cuddle Corner' },
+//       { name: 'Mens Wear', href: '/shop?category=Mens' },
+//       { name: 'Key Chains', href: '/shop?category=Mens' },
+//       { name: 'Chrochet Scarf', href: '/shop?category=Mens' }
+
+
+//     ],
+//   },
+//   { name: 'About', href: '/about' },
+//   { name: 'Blog', href: '/blog' },
+//   { name: 'Contact', href: '#contact' }
+
+
+// ,
+// ];
+
+type NavChild =
+  | { name: string; href: string }
+  | { name: string; action: "scroll" };
+
+const scrollToCollections = () => {
+  const section = document.getElementById("collections");
+  section?.scrollIntoView({ behavior: "smooth" });
+};
+
+const navigation :{name: string;
+  href: string;
+  children?: NavChild[];}[]= [
+  { name: "Home", href: "/" },
   {
-    name: 'Shop',
-    href: '/shop',
+    name: "Shop",
+    href: "#",
     children: [
-      { name: 'All Products', href: '/shop' },
-      { name: 'Kids Wear', href: '/shop?category=shirts' },
-      { name: 'Tops', href: '/shop?category=tops' },
-      { name: 'Bouquet', href: '/collections/bouquet' }
-,
-      { name: 'Hair Accessories', href: '/shop?category=bottoms' },
-      { name: 'Coaster', href: '/shop?category=outerwear' },
-      { name: 'Cuddle Corner', href: '/shop?category=cuddle Corner' },
-      { name: 'Mens Wear', href: '/shop?category=Mens' },
-      { name: 'Key Chains', href: '/shop?category=Mens' },
-      { name: 'Chrochet Scarf', href: '/shop?category=Mens' }
-
-
+      { name: "All Products", action: "scroll" },
+      { name: "Kids Wear", href: "/collections/kids-wear" },
+      { name: "Womens Wear", href: "/collections/womens-wear" },
+      { name: "Bouquet", href: "/collections/bouquet" },
+      { name: "Hair Accessories", href: "/collections/hair-accessories" },
+      { name: "Home Decor", href: "/collections/Home-Decor" },
+      { name: "Cuddle Corner", href: "/collections/cuddle-corner" },
+      { name: "Mens Wear", href: "/collections/mens-wear" },
+      { name: "Key Chains", href: "/collections/key-chains" },
+      { name: "Crochet Scarf", href: "/collections/scarf" },
     ],
   },
-  { name: 'About', href: '/about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '#contact' }
-
-
-,
+  { name: "About", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "#contact" },
 ];
+
+
+
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -148,15 +186,31 @@ const Header = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg py-2"
                     >
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          to={child.href}
-                            className="block px-4 py-2 text-sm text-black hover:bg-gray-100 transition-colors"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
+                      {item.children.map((child) =>
+  "action" in child ? (
+    <button
+      key={child.name}
+      onClick={() => {
+        const section = document.getElementById("collections");
+        section?.scrollIntoView({ behavior: "smooth" });
+        setIsMobileMenuOpen(false);
+        setActiveDropdown(null);
+      }}
+      className="block w-full text-left px-4 py-2 text-sm text-black hover:bg-gray-100"
+    >
+      {child.name}
+    </button>
+  ) : (
+    <Link
+      key={child.name}
+      to={child.href}
+      className="block px-4 py-2 text-sm text-black hover:bg-gray-100"
+    >
+      {child.name}
+    </Link>
+  )
+)}
+
                     </motion.div>
                   )}
                 </AnimatePresence>
